@@ -28,36 +28,69 @@
 <p id="tries">Number of tries is <em>0</em>.</p>
 <p id="distance">Distance is <em>unknown</em>.</p>
 <div class="flex-container">
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="0" onclick="check(0)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="1" onclick="check(1)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="2" onclick="check(2)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="3" onclick="check(3)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="4" onclick="check(4)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="5" onclick="check(5)"></div>
 </div>
 <div class="flex-container">
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="6" onclick="check(6)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="7" onclick="check(7)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="8" onclick="check(8)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="9" onclick="check(9)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="10" onclick="check(10)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="11" onclick="check(11)"></div>
 </div>
 <div class="flex-container">
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="12" onclick="check(12)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="13" onclick="check(13)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="14" onclick="check(14)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="15" onclick="check(15)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="16" onclick="check(16)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="17" onclick="check(17)"></div>
 </div>
 <div class="flex-container">
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
-    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="18" onclick="check(18)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="19" onclick="check(19)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="20" onclick="check(20)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="21" onclick="check(21)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="22" onclick="check(22)"></div>
+    <div><img src="images/tree.png" alt="Image of a tree" width="200" height="150" id="23" onclick="check(23)"></div>
 </div>
+
+<script>
+    "use strict"
+    let triesCount = 0
+    let animalLocation = 13
+    let triesElement = document.querySelector("#tries em")
+    let distanceElement = document.querySelector("#distance em")
+
+    function check(imageId){
+        if (imageId === animalLocation){
+            document.getElementById(imageId).src = "images/elephant.jpeg"
+        }else{
+            document.getElementById(imageId).src = "images/dirt.png"
+        }
+        triesCount++
+        triesElement.innerHTML = "" + triesCount
+        distance(imageId);
+    }
+
+    function distance(location){
+        let guessX = location % 6
+        let guessY = Math.floor(location / 6)
+
+        let locationX = animalLocation % 6
+        let locationY = Math.floor(animalLocation / 6)
+
+        let diffX = Math.abs(guessX - locationX)
+        let diffY = Math.abs(guessY - locationY)
+
+        distanceElement.innerHTML = "" + Math.max(diffX, diffY)
+
+    }
+</script>
 </body>
 </html>
