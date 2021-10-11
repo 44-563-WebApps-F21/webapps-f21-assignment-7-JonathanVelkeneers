@@ -37,20 +37,41 @@
 </p>
 <label for="input">Enter value: </label><input type="text" id="input">
 <button onclick="makeNewDiv()">Push value</button>
+<button onclick="popItem()">Pop value</button>
+<button onclick="zap()">Zap value</button>
 
 
 </body>
 <script>
+    let stackContainer = document.querySelector('#target')
+
     function makeNewDiv() {
         let value = document.querySelector("#input").value
-        /* make the div and its text */
         let element = document.createElement("div")
+
         element.classList.add("stack")
         element.innerHTML = value
 
-        /* add it to the container */
-        document.getElementById('target').appendChild(element)
+        stackContainer.appendChild(element)
+    }
+    function popItem() {
+        let children = document.querySelectorAll(".stack")
+        if (children.length > 0) {
+            children[children.length - 1].remove()
+        }
+    }
+    function zap() {
+        let children = document.querySelectorAll(".stack")
+        let input = document.querySelector("#input").value
+
+        for (const stackItem of children) {
+            if (stackItem.innerHTML === input) {
+                console.log(stackItem.innerHTML)
+                stackItem.remove()
+            }
+        }
 
     }
+
 </script>
 </html>	
