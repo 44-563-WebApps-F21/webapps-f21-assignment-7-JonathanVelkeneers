@@ -39,6 +39,7 @@
 <button onclick="makeNewDiv()">Push value</button>
 <button onclick="popItem()">Pop value</button>
 <button onclick="zap()">Zap value</button>
+<button onclick="makeUnique()">Make unique</button>
 
 
 </body>
@@ -54,12 +55,14 @@
 
         stackContainer.appendChild(element)
     }
+
     function popItem() {
         let children = document.querySelectorAll(".stack")
         if (children.length > 0) {
             children[children.length - 1].remove()
         }
     }
+
     function zap() {
         let children = document.querySelectorAll(".stack")
         let input = document.querySelector("#input").value
@@ -70,7 +73,20 @@
                 stackItem.remove()
             }
         }
+    }
 
+    function makeUnique() {
+        let children = document.querySelectorAll(".stack")
+        let seenElements = []
+
+        for (let i = children.length - 1; i >= 0; i--) {
+            if (seenElements.includes(children[i].innerHTML)){
+                children[i].remove()
+            }else{
+                seenElements.push(children[i].innerHTML)
+            }
+
+        }
     }
 
 </script>

@@ -25,6 +25,7 @@
 <body>
 <h1>Animal hunt Jonathan</h1>
 <p>Click on the squares to search for wild life</p>
+<button onclick="resetGame()">Reset the game</button>
 <p id="tries">Number of tries is <em>0</em>.</p>
 <p id="distance">Distance is <em>unknown</em>.</p>
 <div class="flex-container">
@@ -63,14 +64,14 @@
 <script>
     "use strict"
     let triesCount = 0
-    let animalLocation = 13
+    let animalLocation = Math.floor(Math.random() * 24)
     let triesElement = document.querySelector("#tries em")
     let distanceElement = document.querySelector("#distance em")
 
-    function check(imageId){
-        if (imageId === animalLocation){
+    function check(imageId) {
+        if (imageId === animalLocation) {
             document.getElementById(imageId).src = "images/elephant.jpeg"
-        }else{
+        } else {
             document.getElementById(imageId).src = "images/dirt.png"
         }
         triesCount++
@@ -78,7 +79,7 @@
         distance(imageId);
     }
 
-    function distance(location){
+    function distance(location) {
         let guessX = location % 6
         let guessY = Math.floor(location / 6)
 
@@ -89,7 +90,10 @@
         let diffY = Math.abs(guessY - locationY)
 
         distanceElement.innerHTML = "" + Math.max(diffX, diffY)
+    }
 
+    function resetGame() {
+        window.location = window.location
     }
 </script>
 </body>
