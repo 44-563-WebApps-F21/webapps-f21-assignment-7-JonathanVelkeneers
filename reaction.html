@@ -11,30 +11,39 @@
 </head>
 <body>
 <h1>Jonathan's reaction timer</h1>
-<h2>Timeout - Red in 3 seconds</h2>
 
 <p id="target">Your time</p>
 <p id="countdown">Count</p>
 
-<button type="button" class="btn btn-primary" onclick="buttonPress1()">
+<button type="button" class="btn btn-primary" onclick="startTime()">
     Start Timer.
 </button>
 <button type="button" class="btn btn-primary" onclick="recordReact()">
     React Now.
 </button>
 <script>
-    let currentTime;
+    let currentTime = undefined;
+    let countDownElem = document.querySelector("#countdown")
+    let resultElem = document.querySelector("#target")
 
     function recordReact() {
         currentTime = Date.now()
-        console.log(currentTime)
-
     }
 
-    function rwo() {
+    function startTime() {
+        for (let i = 0; i < 4; i++) {
+            setTimeout(() => {
+                countDownElem.innerHTML = "" + i
+            }, (3 - i) * 1000)
+        }
         setTimeout(() => {
-            document.getElementById('target').style.color = "red"
+            if (currentTime === undefined) {
+                resultElem.innerHTML = "Too slow!"
+            } else {
+                resultElem.innerHTML = "Time was " + (Date.now() - currentTime) + "ms"
+            }
         }, 3000)
+
     }
 </script>
 
